@@ -1,5 +1,6 @@
 import React from "react"
 
+
 export default function Header(){
     return (
         <header className="header">
@@ -10,7 +11,8 @@ export default function Header(){
             <h2 className="header--title">Meme Generator</h2>
             <ul className="header--container">
             <li className="header--tab"><a href="#">Download</a></li>
-            <li className="header--tab"><a href="#">Share</a></li>
+            <li className="header--tab"><a href="https://api.whatsapp.com/send?phone=&text=URLENCODEDTEXTHERE" data-action="share/whatsapp/share"
+        target="_blank">Share</a></li>
             <li className="header--tab"><a href="/">Refresh</a></li>
             </ul>
         </header>
