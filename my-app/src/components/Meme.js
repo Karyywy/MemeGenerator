@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import memesData from "../memesData.js"
 
 export default function Meme(){
@@ -8,18 +8,19 @@ export default function Meme(){
         randomImage: "http://i.imgflip.com/1bij.jpg" 
    })
 
-   const [allMemeImages, setAllMemeImages] = React.useState(memesData)
+const [allMemes, setAllMemes] = React.useState(memesData)
 
    function getMemeImage(){
-        const memesArray = allMemeImages.data.memes
+        const memesArray = allMemes.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         const url = memesArray[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
         }))
-   }
 
+   }
+   
    function handleChange(event){
     const {name, value} = event.target
     setMeme(prevMeme => ({
@@ -28,13 +29,13 @@ export default function Meme(){
     }))
    }
 
+
     return(
         <main>
         <div className="form">
-            
             <input
                 type="text"
-                placeholder="Text #1"
+                placeholder="Top Text"
                 className="form--input"
                 name="topText"
                 value={meme.topText}
@@ -43,7 +44,7 @@ export default function Meme(){
 
             <input 
                 type="text"
-                placeholder="Text #2"
+                placeholder="Bottom Text"
                 className="form--input"
                 name="bottomText"
                 value={meme.bottomText}
