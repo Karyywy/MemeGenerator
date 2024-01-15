@@ -95,7 +95,7 @@ a:hover{
 
 .form--button {
     grid-column: 1 / -1;
-    border: 2px solid #A818DA;
+    border: 2px solid #0077b6;
     border-radius: 5px;
     background: none;
     color: #711F8D;
@@ -106,20 +106,25 @@ a:hover{
     cursor: pointer;
     position: relative;
     transition: all 1.5s;
+    cursor: pointer;
 }
 
-.form--button:hover {
-    color: #fff;
-    background:  linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+.form--button:hover { 
+    background-image: linear-gradient(95.9deg, #03045e 0%, #0077b6 19%, #00b4d8 50%, #caf0f8 100%);
+    transform: translateY(-10%);
+    opacity: .8;
+  }
+
+
+.form--button:active {
+    background-color: var(#0077b6);
+    border-color: var(#0077b6);
 }
 
-.form--button::before {
-    opacity: 0.3;
-}
-
-.form--button::after {
-    transition-delay: 0.3s;
-}
+.form--button:focus {
+    outline: none;
+    box-shadow: 0 0 0 5px rgba(41, 156, 228, 0.4);
+  }
 
 .meme {
     position: relative;

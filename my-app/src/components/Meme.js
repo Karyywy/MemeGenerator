@@ -29,6 +29,15 @@ const [allMemes, setAllMemes] = React.useState(memesData)
     }))
    }
 
+   const [buttonText, setButtonText] = useState('Submit');
+ 
+    const handleClick = () => {
+        setButtonText('Loading...');
+ 
+        setTimeout(() => {
+            setButtonText('Generate Meme');
+        }, 200); 
+    };
 
     return(
         <main>
@@ -53,9 +62,11 @@ const [allMemes, setAllMemes] = React.useState(memesData)
 
             <button 
                 className="form--button"
-                onClick={getMemeImage}
-            >
-                Generate Meme
+                onClick={() =>{
+                    getMemeImage();
+                    handleClick();
+                }}> 
+                {buttonText}         
             </button>
             </div>
             <div className="meme">
